@@ -1,5 +1,5 @@
 const page = () => {
-  return <p className="text-red-500">Yahalo</p>;
+  return <div></div>;
 };
 
 export default page;
