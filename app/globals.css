@@ -49,9 +49,9 @@
   --color-dark-400: var(--dark-400);
   --color-purple-600: var(--purple-600);
   --color-purple-100: var(--purple-100);
-  --color-green-500: var(--green-500);
-  --color-green-400: var(--green-400);
-  --color-green-300: var(--green-300);
+  --color-blue-500: var(--blue-500);
+  --color-blue-400: var(--blue-400);
+  --color-blue-300: var(--blue-300);
   --color-red-500: var(--red-500);
   --color-yellow-500: var(--yellow-500);
 }
@@ -92,50 +92,65 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  /* Base surfaces */
+  --background: oklch(0.11 0.01 260); /* very dark, slightly blue */
+  --foreground: oklch(0.97 0 0);
+
+  /* Cards / elevated surfaces */
+  --card: oklch(0.16 0.01 260);
+  --card-foreground: oklch(0.97 0 0);
+
+  --popover: oklch(0.18 0.01 260);
+  --popover-foreground: oklch(0.97 0 0);
+
+  /* Primary text + buttons */
+  --primary: oklch(0.92 0 0);
+  --primary-foreground: oklch(0.18 0 0);
+
+  /* Secondary / muted */
+  --secondary: oklch(0.22 0.01 260);
+  --secondary-foreground: oklch(0.97 0 0);
+
+  --muted: oklch(0.22 0.01 260);
+  --muted-foreground: oklch(0.68 0 0);
+
+  --accent: oklch(0.24 0.01 260);
+  --accent-foreground: oklch(0.97 0 0);
+
+  /* Inputs & borders */
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.55 0 0);
+
+  /* Sidebar */
+  --sidebar: oklch(0.14 0.01 260);
+  --sidebar-foreground: oklch(0.97 0 0);
+  --sidebar-primary: oklch(0.32 0.18 250);
+  --sidebar-primary-foreground: oklch(0.97 0 0);
+  --sidebar-accent: oklch(0.22 0.01 260);
+  --sidebar-accent-foreground: oklch(0.97 0 0);
+  --sidebar-border: oklch(1 0 0 / 12%);
+  --sidebar-ring: oklch(0.55 0 0);
+
+  /* Charts (slightly punchier for dark bg) */
+  --chart-1: oklch(0.62 0.23 250);
+  --chart-2: oklch(0.7 0.18 170);
+  --chart-3: oklch(0.78 0.18 70);
+  --chart-4: oklch(0.64 0.26 305);
+  --chart-5: oklch(0.66 0.24 20);
 
   /* Brand colors */
-  --dark-900: #000510;
-  --dark-700: #0f1316;
-  --dark-500: #1a2027;
-  --dark-400: #1e2833;
+  --dark-900: #070b14;
+  --dark-700: #0e1420;
+  --dark-500: #141c2b;
+  --dark-400: #1a2436;
 
   --purple-600: #1b254b;
   --purple-100: #a3aed0;
 
-  --green-500: #76da44;
-  --green-400: #2ebe7b;
-  --green-300: #99e39e;
+  --blue-500: #3bbcff;
+  --blue-400: #2fd1c5;
+  --blue-300: #8fe9e1;
 
   --red-500: #ff685f;
   --yellow-500: #dabe44;
@@ -164,7 +179,7 @@
   }
 
   .badge-up {
-    @apply bg-green-600/20! text-green-600!;
+    @apply bg-blue-600/20! text-blue-600!;
   }
 
   .badge-down {
@@ -219,7 +234,7 @@
     }
 
     .config-button-active {
-      @apply rounded-sm px-2.5 py-1.5 border-0 cursor-pointer text-sm text-gray-900 bg-green-500;
+      @apply rounded-sm px-2.5 py-1.5 border-0 cursor-pointer text-sm text-gray-900 bg-blue-500;
     }
 
     .chart {
@@ -522,7 +537,7 @@
       @apply bg-dark-500 rounded-xl overflow-hidden mt-5;
 
       .exchange-name {
-        @apply text-green-500 font-bold;
+        @apply text-blue-500 font-bold;
 
         a {
           @apply absolute inset-0 z-10;
@@ -564,7 +579,7 @@
           }
 
           .link {
-            @apply flex items-center text-green-500 gap-1;
+            @apply flex items-center text-blue-500 gap-1;
           }
         }
       }
@@ -726,7 +741,7 @@
       }
 
       .icon {
-        @apply size-8 z-20 bg-dark-400 rounded-full p-2 text-green-500;
+        @apply size-8 z-20 bg-dark-400 rounded-full p-2 text-blue-500;
       }
     }
 
@@ -872,7 +887,7 @@
       }
 
       .page-link-active {
-        @apply bg-green-500! text-dark-900 font-semibold;
+        @apply bg-blue-500! text-dark-900 font-semibold;
       }
     }
   }
