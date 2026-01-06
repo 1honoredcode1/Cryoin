@@ -1,15 +1,23 @@
 "use client";
 import { Separator } from "@radix-ui/react-separator";
 import CandlestickChart from "./CandleStickChart";
+import CoinHeader from "./CoinHeader";
 
-const LiveDataWrapper = ({
-  coinId,
-
-  coinOHLCData,
-}: LiveDataProps) => {
+const LiveDataWrapper = ({ coinId, coin, coinOHLCData }: LiveDataProps) => {
   return (
     <section id="live-data-wrapper">
-      <p>Coin Header</p>
+      <CoinHeader
+        name={coin.name}
+        image={coin.image.large}
+        livePrice={coin.market_data.current_price.usd}
+        livePriceChangePercentage24h={
+          coin.market_data.price_change_24h_in_currency.usd
+        }
+        priceChangePercentage30d={
+          coin.market_data.price_change_percentage_30d_in_currency.usd
+        }
+        priceChange24h={coin.market_data.price_change_24h_in_currency.usd}
+      />
       <Separator className="divider" />
       <div className="trend">
         <CandlestickChart coinId={coinId} data={coinOHLCData}>
